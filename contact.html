@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack children vertically */
+            min-height: 100vh; /* Full viewport height */
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e;
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        /* Main styling */
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex: 1; /* Allow main to grow and fill space */
+            transition: margin-top 0.3s ease;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: 700px;
+            max-width: 100%;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column; /* Stack menu items */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Position under header */
+                left: 0; /* Align left */
+                background-color: #36454F; /* Background color for dropdown */
+                width: 100%; /* Full width */
+                z-index: 1000; /* Above other content */
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="card">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us using the form below.</p>
+            
+            <div class="box">
+                <form action="https://formspree.io/f/xvojojjv" method="POST">
+                    <input type="text" name="Name" placeholder="Full Name" required>
+                    <input type="email" name="Email" placeholder="Email ID" required>
+                    <select name="country" required>
+                        <option value="" disabled selected>Select your country</option>
+                        <option>United States</option>
+                        <option>France</option>
+                        <option>United Kingdom</option>
+                        <option>China</option>
+                        <option>India</option>
+                        <option>Japan</option>
+                        <option>Canada</option>
+                        <option>Germany</option>
+                        <option>Russia</option>
+                        <option>Spain</option>
+                    </select>
+                    <textarea name="Message" placeholder="Message" required></textarea>
+                    <button type="reset">Clear Form</button>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const main = document.getElementById('main');
+
+            menu.classList.toggle('active'); // Toggle the menu visibility
+            
+            // Adjust margin based on the menu's visibility
+            if (menu.classList.contains('active')) {
+                main.style.marginTop = '80px'; // Move the card down
+            } else {
+                main.style.marginTop = '20px'; // Return to original position
+            }
+        }
+    </script>
+</body>
+</html>

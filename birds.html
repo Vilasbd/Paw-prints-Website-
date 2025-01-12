@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Foreign Bird Breeds - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position relative for absolute elements */
+            z-index: 1000; /* Keep header above other content */
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex; /* Flexbox for horizontal menu */
+            margin-left: auto; /* Push menu to the right */
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e; 
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9; /* Change color when focused or clicked */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* Space between hamburger and logo */
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            transition: margin-top 0.3s; /* Smooth transition for margin */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            opacity: 0; /* Start with cards hidden */
+            transform: translateY(20px); /* Move cards down */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation transition */
+            text-align: justify;
+        }
+
+        img {
+            border-radius: 10px; /* Set border radius for all images */
+            width: 100%; /* Set width to 100% for responsive design */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 300px; /* Set a max-width to prevent images from becoming too large */
+        }
+
+        h3 {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        /* Animation class */
+        .animate {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Reset position */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column; /* Stack menu items */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Position under header */
+                left: 0; /* Align left */
+                background-color: #36454F; /* Background color for dropdown */
+                width: 100%; /* Full width */
+                z-index: 1000; /* Above other content */
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+
+            /* New class to shift the main content down only for mobile */
+            .main-active {
+                margin-top: 100px; /* Adjust based on header height */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <h1>Top 10 Foreign Bird Breeds</h1>
+
+        <div class="card" id="card1">
+            <h3>1. African Grey Parrot</h3>
+            <img src="African Grey Parrot.jpg" alt="African Grey Parrot"></br></br>
+            <p>The African Grey Parrot is renowned for its intelligence and remarkable ability to mimic human speech. With striking grey feathers and bright red tail feathers, they are captivating birds to observe. These parrots thrive on social interaction and require mental stimulation to prevent boredom. African Greys can form deep bonds with their owners and often seek companionship. They are also known to exhibit a wide range of emotions, making them sensitive pets.</p>
+            <p>Group – Parrots<br/>Height – 12 to 14 inches<br/>Weight – 12 to 16 oz<br/>Life Span – 40 to 60 years</p>
+        </div>
+
+        <div class="card" id="card2">
+            <h3>2. Budgerigar</h3>
+            <img src="Budgerigar.jpg" alt="Budgerigar"></br></br>
+            <p>Commonly known as Budgies, Budgerigars are small, colorful parakeets that are popular pets worldwide. They are social birds that thrive in pairs or small groups, known for their playful and affectionate nature. Budgies come in various colors and can be taught to mimic words and sounds. They require a spacious cage and plenty of toys to keep them mentally engaged. Additionally, Budgies are relatively easy to care for, making them suitable for first-time bird owners.</p>
+            <p>Group – Parakeets<br/>Height – 7 to 8 inches<br/>Weight – 1 oz<br/>Life Span – 5 to 10 years</p>
+        </div>
+
+        <div class="card" id="card3">
+            <h3>3. Cockatiel</h3>
+            <img src="Cockatiel.jpg" alt="Cockatiel"></br></br>
+            <p>Cockatiels are small parrots known for their charming crests and friendly dispositions. They can be trained to whistle and mimic sounds, which makes them popular pets. Cockatiels thrive on social interaction and often enjoy spending time outside their cages. Their playful nature means they require plenty of toys and mental stimulation. Cockatiels also have distinct personalities and can be quite affectionate with their owners.</p>
+            <p>Group – Cockatoos<br/>Height – 12 to 14 inches<br/>Weight – 3 to 4 oz<br/>Life Span – 10 to 15 years</p>
+        </div>
+
+        <div class="card" id="card4">
+            <h3>4. Macaw</h3>
+            <img src="Macaw.jpg" alt="Macaw"></br></br>
+            <p>Macaws are large, vibrant parrots recognized for their striking colors and long tails. These birds are known for their playful personalities and intelligence. They require ample space to fly and play, making them better suited for experienced bird owners. Macaws thrive on social interaction and can form strong bonds with their human companions. They are highly vocal and can learn to mimic a variety of sounds and words.</p>
+            <p>Group – Parrots<br/>Height – 24 to 40 inches<br/>Weight – 2 to 4 lbs<br/>Life Span – 30 to 50 years</p>
+        </div>
+
+        <div class="card" id="card5">
+            <h3>5. Lovebird</h3>
+            <img src="Lovebird.jpg" alt="Lovebird"></br></br>
+            <p>Lovebirds are small, affectionate parrots known for their strong pair bonds. They are social birds that thrive in pairs, often seen cuddling and grooming each other. Lovebirds come in a variety of colors and are playful and curious by nature. They require plenty of mental stimulation, including toys and interaction with their owners. Due to their sociable behavior, lovebirds are best kept in pairs or small groups to keep them happy and engaged.</p>
+            <p>Group – Parrots<br/>Height – 5 to 7 inches<br/>Weight – 2 oz<br/>Life Span – 10 to 15 years</p>
+        </div>
+
+        <div class="card" id="card6">
+            <h3>6. Canary</h3>
+            <img src="Canary.jpg" alt="Canary"></br></br>
+            <p>Canaries are small songbirds celebrated for their beautiful singing and vibrant colors. They are easy to care for and can be kept alone or in pairs, though they prefer a calm environment. Canaries are known for their gentle nature and do not typically require much interaction, making them suitable for busy owners. They come in various colors and patterns, including yellow, orange, and white. Their melodious singing can be a delightful addition to any home.</p>
+            <p>Group – Songbirds<br/>Height – 5 to 6 inches<br/>Weight – 1 oz<br/>Life Span – 10 to 15 years</p>
+        </div>
+
+        <div class="card" id="card7">
+            <h3>7. Finch</h3>
+            <img src="Finch.jpg" alt="Finch"></br></br>
+            <p>Finches are small, social birds that come in a variety of species and colors. They are active and love to chirp and interact with each other, making them entertaining pets. Finches thrive in flocks and are happiest when kept in pairs or groups. They require a spacious cage with plenty of perches and toys to keep them engaged. Additionally, finches are known for their gentle nature and can live harmoniously with other small birds.</p>
+            <p>Group – Songbirds<br/>Height – 4 to 7 inches<br/>Weight – 0.5 to 1 oz<br/>Life Span – 5 to 10 years</p>
+        </div>
+
+        <div class="card" id="card8">
+            <h3>8. Parrotlet</h3>
+            <img src="Parrotlet.jpg" alt="Parrotlet"></br></br>
+            <p>Parrotlets are small, feisty parrots that pack a lot of personality into their tiny bodies. They are known for their curious and playful behavior, often engaging in acrobatics and playtime. Despite their small size, they are very social and can be quite vocal. Parrotlets enjoy interacting with their owners and can be trained to perform tricks. They thrive in an environment filled with toys and mental stimulation to keep them happy and healthy.</p>
+            <p>Group – Parrots<br/>Height – 4 to 5 inches<br/>Weight – 1 oz<br/>Life Span – 15 to 20 years</p>
+        </div>
+
+        <div class="card" id="card9">
+            <h3>9. Quaker Parrot</h3>
+            <img src="Quaker Parrot.jpg" alt="Quaker Parrot"></br></br>
+            <p>Quaker Parrots, also known as Monk Parakeets, are medium-sized parrots known for their playful and friendly demeanor. They are intelligent birds that can learn to talk and mimic sounds. Quakers are highly social and require a lot of interaction and mental stimulation to thrive. They are often kept in pairs and enjoy climbing and playing with toys. Quakers have a charming personality and can be very affectionate with their owners.</p>
+            <p>Group – Parrots<br/>Height – 9 to 10 inches<br/>Weight – 3 to 5 oz<br/>Life Span – 15 to 30 years</p>
+        </div>
+
+        <div class="card" id="card10">
+            <h3>10. Conure</h3>
+            <img src="Conure.jpg" alt="Conure"></br></br>
+            <p>Conures are small to medium-sized parrots that are known for their playful and energetic nature. They are social birds that enjoy being around people and can be quite vocal. Conures come in various colors, including green, yellow, and orange, and are often kept as pets for their friendly disposition. They thrive on interaction and require plenty of toys to keep them occupied. With their affectionate personalities, conures can make delightful companions.</p>
+            <p>Group – Parrots<br/>Height – 10 to 12 inches<br/>Weight – 4 to 5 oz<br/>Life Span – 15 to 30 years</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to handle menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const main = document.getElementById("main");
+            menu.classList.toggle("active"); // Toggle the active class on the menu
+            
+            // Adjust main margin based on menu visibility only in mobile mode
+            if (window.innerWidth <= 768) {
+                if (menu.classList.contains("active")) {
+                    main.classList.add("main-active"); // Shift down
+                } else {
+                    main.classList.remove("main-active"); // Shift up
+                }
+            }
+        }
+
+        // Function to handle scroll animations
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate'); // Add animation class
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            });
+        });
+
+        cards.forEach(card => {
+            observer.observe(card); // Observe each card
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position relative for absolute elements */
+            z-index: 1000; /* Keep header above other content */
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex; /* Flexbox for horizontal menu */
+            margin-left: auto; /* Push menu to the right */
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e;
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* Space between hamburger and logo */
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 0; /* No margin in desktop mode */
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px; /* Gap between cards */
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column; /* Stack title and content vertically */
+            opacity: 0; /* Start as invisible */
+            transform: translateY(20px); /* Move down */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Add transition for opacity and position */
+        }
+
+        .card.visible {
+            opacity: 1; /* Fully visible when added */
+            transform: translateY(0); /* Original position */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 15px;
+            flex-grow: 1; /* Make sure the content fills the card */
+            display: flex;
+            flex-direction: column; /* Stack title and content vertically */
+            justify-content: space-between; /* Space out title and content */
+        }
+
+        .card img {
+            max-width: 100%; /* Ensure the image fits the card */
+            height: auto;
+            border-radius: 8px 8px 0 0; /* Round the top corners */
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column; /* Stack menu items */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Position under header */
+                left: 0; /* Align to the left */
+                background-color: #36454F; /* Background color for dropdown */
+                width: 100%; /* Full width */
+                z-index: 1000; /* Above other content */
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main"> <!-- Add id for main -->
+        <section>
+            <h2>Our Blog</h2>
+            <p>Explore our latest articles and enjoy reading heartwarming pet stories!</p>
+        </section>
+
+        <section class="cards-container" id="blogCards">
+            <div class="card">
+                <img src="adopt2.png" alt="Puppy Care"> <!-- Add the image path -->
+                <div class="card-content">
+                    <h3>Donating Food to Our Furry Friends</h3>
+                    <p>Donating food to dogs in need is a powerful way to make a difference. Join us in spreading love and care to our furry companions—every little bit helps!</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="adopt1.png" alt="Cat Training"> <!-- Add the image path -->
+                <div class="card-content">
+                    <h3>The Joy of Feeding Our Furry Friends</h3>
+                    <p>Feeding dogs is more than just a necessity; it’s an act of love that strengthens our bond with them. Let’s celebrate the joy of nurturing our furry companions, one meal at a time!</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="adopt5.jpg" alt="Vet Check-ups"> <!-- Add the image path -->
+                <div class="card-content">
+                    <h3>The Joy of Adopting a Cat</h3>
+                    <p>Adopting a cat not only saves a life but also brings endless joy and companionship into your home. Consider giving a loving feline a forever home—your new best friend is waiting!</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="adopt4.jpg" alt="Best Pet Toys"> <!-- Add the image path -->
+                <div class="card-content">
+                    <h3>The Joy of Adopting a Bird</h3>
+                    <p>Adopting a bird opens the door to a vibrant and playful companionship. Give a feathered friend a forever home and enjoy the joy and song they bring to your life!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const main = document.getElementById('main');
+
+            menu.classList.toggle('active'); // Toggle the menu visibility
+            
+            // Adjust margin based on the menu's visibility
+            if (menu.classList.contains('active')) {
+                main.style.marginTop = '80px'; // Move the main content down when menu is active
+            } else {
+                main.style.marginTop = '0'; // Set to 0 in desktop mode
+            }
+        }
+
+        // Function to create a new blog card
+        function createBlogCard(title, content, imageUrl) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            // Create image element if an image URL is provided
+            if (imageUrl) {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                card.appendChild(img);
+            }
+
+            const cardContent = document.createElement('div');
+            cardContent.className = 'card-content';
+
+            const cardTitle = document.createElement('h3');
+            cardTitle.textContent = title;
+
+            const cardDescription = document.createElement('p');
+            cardDescription.textContent = content;
+
+            cardContent.appendChild(cardTitle);
+            cardContent.appendChild(cardDescription);
+            card.appendChild(cardContent);
+
+            return card;
+        }
+
+        // Function to reveal cards on scroll
+        function revealCards() {
+            const cards = document.querySelectorAll('.card');
+            const windowHeight = window.innerHeight;
+
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+
+                if (cardTop < windowHeight * 0.8) {
+                    card.classList.add('visible'); // Add visible class when in viewport
+                }
+            });
+        }
+
+        // Initialize card visibility on scroll
+        window.addEventListener('scroll', revealCards);
+        window.addEventListener('load', revealCards); // Ensure cards are visible on load
+    </script>
+</body>
+</html>

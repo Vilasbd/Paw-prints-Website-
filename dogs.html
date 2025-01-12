@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Foreign Dog Breeds - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e; 
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            transition: margin-top 0.3s; /* Smooth transition for margin */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            text-align: justify;
+        }
+
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        h3 {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; 
+                flex-direction: column;
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                background-color: #36454F; 
+                width: 100%; 
+                z-index: 1000; 
+            }
+
+            .menu.active {
+                display: flex; 
+            }
+
+            .hamburger {
+                display: flex; 
+            }
+
+            header {
+                justify-content: flex-start; 
+            }
+
+            /* Adjusted margin to reduce gap when menu is active */
+            .main-active {
+                margin-top: 80px; /* Set to a smaller value */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <h1>Top 10 Foreign Dog Breeds</h1>
+
+        <div class="card" id="card1">
+            <h3>1. Golden Retriever</h3>
+            <img src="Golden Retriever.jpg" alt="Golden Retriever"><br><br>
+            <p>First, in our list of best dogs for a home in India is Golden Retriever. This is the top-rated dog for homes and families. Golden retrievers are known for their obedient and caring nature. This breed is smart and can be trained as they are perfect in competitions. They are also ideal watchdogs and have medium-sized built. Golden retrievers have a waterproof coat that requires regular grooming. The breed-Retriever’s name refers to the breed’s ability to retrieve shot game undamaged because of its soft mouth. The breed has instinctive love for the water. The breed is best suited for urban or country environments. This breed originated from Scotland.</p>
+            <p>Group – Sporting<br>Height – 21 to 24 inches<br>Weight – 25 to 35 Kg<br>Life Span – 10-12 years</p>
+        </div>
+
+        <div class="card" id="card2">
+            <h3>2. German Shepherd</h3>
+            <img src="german.jpg" alt="German Shepherd"><br><br>
+            <p>Also known as GSD, German shepherds are medium to large-sized. The breed originated from Germany where it received its name. German Shepherd has a wolf-like appearance. Despite of having a scary body, German Shepherds are incredibly loving and caring. They are ideal watchdogs. The breed is mostly used for search and rescue operations, disability assistance, police, and military roles.</p>
+            <p>Group – Working Group<br>Height –22 to 26 Inches<br>Weight – 25 to 35 KG<br>Life Span – 9 to 13 years</p>
+        </div>
+
+        <div class="card" id="card3">
+            <h3>3. Labrador</h3>
+            <img src="lab.jpg" alt="Labrador"><br><br>
+            <p>Next on our list of best dogs for a home in India is Labrador. It is one of the most useful working dogs. The breed is formerly known to be the fisherman’s helper, they used to help in picking ropes, and picking up fish from North Atlantic. The breed is considered to be one of the best dog breeds for families in India. Labradors are hardworking and have a good nature. Modern Labrador works as a hunter’s retriever, shows competitors help dogs, and is a perfect watchdog.</p>
+            <p>Group – Sporting<br>Height – 22 to 24 inches<br>Life Span – 10-12 years</p>
+        </div>
+
+        <div class="card" id="card4">
+            <h3>4. Beagle</h3>
+            <img src="beagle.jpg" alt="Beagle"><br><br>
+            <p>Beagle is a small hound that looks like a larger foxhound. This breed of dog was primarily developed for hunting hares. The breed possesses exceptional small and superior tracking instincts. It is one of the dogs that is used as detection dogs for prohibiting foodstuffs and agriculture imports from across the world, especially during the quarantine. Beagles are intelligent and are popular due to their good temper, size, and lack of health problems. Undoubtedly, it is one of the best home dogs in India.</p>
+            <p>Group – Hound group<br>Height – 13 to 15 inches<br>Weight – 20 to 25 Kg<br>Life Span – 12 to 15 years</p>
+        </div>
+
+        <div class="card" id="card5">
+            <h3>5. Pug</h3>
+            <img src="pug.jpg" alt="Pug"><br><br>
+            <p>Known to be the best breed of dog for a home in India, Pug is an ideal pet. This breed is easy to maintain as they shed very less hair. It has physically distinctive features that included a wrinkled body, short-muzzled face, and curled tail. Pugs have a glossy and fine coat in an array of colors. This is one of the dog breeds in India for home as they are more sociable and good companions.</p>
+            <p>Group – Toy Breed<br>Height – 11 to 13 inches<br>Weight – 11 to 16 Kgs<br>Years – 12 to 15 years</p>
+        </div>
+
+        <div class="card" id="card6">
+            <h3>6. Rottweiler</h3>
+            <img src="rottwiller.jpg" alt="Rottweiler"><br><br>
+            <p>Rottweiler is amongst the best breeds of dogs for families in India. The breed is known to be a fierce protector and affectionate. They have tremendous strength and are exceptionally loyal to their master. Thus, they make ideal companions for households. However, they have to be socialized and trained in the best way possible from childhood itself. The breed has a short coat and loose hair on a regular basis. Rottweilers have a good diet, make sure you provide the best dog food with ample nutrients. These dogs come in tan and black or mahogany and black colors.</p>
+            <p>Group – Working <br>Height – 24 to 26 inches<br>Weight – 40 to 50 Kg<br>Life Span – 8 to 10 years</p>
+        </div>
+
+        <div class="card" id="card7">
+            <h3>7. Cocker Spaniel</h3>
+            <img src="cocker.jpg" alt="Cocker Spaniel"><br><br>
+            <p>Next on the list of home dog breeds in India is Cocker Spaniel. Surprisingly, Cocker Spaniel is crossbreed of two different breeds that are American Cocker Spaniel and the English Cocker Spaniel. The breed has been originated from the United Kingdom, where they were bred as hunting dogs. This breed is also known as cockers. The breed has a medium size; thus, they are easy to tame at home. Cocker Spaniels can easily live in an apartment. They feature a medium-length silky coat that slightly wavy and flat. The breed comes in multi-colors with lines.</p>
+            <p>Group – Sporting<br>Height – 13 to 16 inches<br>Weight – 25-35 kg<br>Life Span – 10 to 14 years</p>
+        </div>
+
+        <div class="card" id="card8">
+            <h3>8. Great Dane</h3>
+            <img src="dane.jpg" alt="Great Dane"><br><br>
+            <p>Great Dane is one of the German breeds and is famous for their large size. The breed is also known as Deutsche Dogge, German Mastiff, Boarhound, or Apollo of Dogs. The breed is loyal and intelligent. They are easy to train. It is believed that Great Dane loves kids and is sweet in nature. These dogs are generally found in white, red, hat, fawn, and brindle colors. They are accessible to pets, which is counted amongst the best dogs for a home in India.</p>
+            <p>Group – Working<br>Height – 28 to 32 inches<br>Weight – 45 to 90 kg<br>Years – 10 to 12 years</p>
+        </div>
+
+        <div class="card" id="card9">
+            <h3>9. Dachshund</h3>
+            <img src="dachshund.jpg" alt="Dachshund"><br><br>
+            <p>Dachshund is popularly known as badger dog, wiener dog, and sausage dog, a short-legged and long-bodied dog. Dachshunds are good at expressing their feelings and are a bundle of joy, which makes them one of the best dogs for a home in India. The breed is available in two different sizes, which are miniature and standard. The smaller size of the dog is known to be miniature. They have a loud voice because of this these dogs can be ideal home watchers.</p>
+            <p>Group – Hound group<br>Height – 8 to 9 inches<br>Weight – 8 to 11 Kg<br>Life Span – 10 to 14 years</p>
+        </div>
+
+        <div class="card" id="card10">
+            <h3>10. Boxer</h3>
+            <img src="boxer.jpg" alt="Boxer"><br><br>
+            <p>Next on our list of best dogs for home is Boxer. The breed is easy to train and maintain. Seeing their size and build, Boxer is ideal for all types of households, making them one of the best breeds of dog in India for home. The appearance of breed has a large head body, powerful jaws, and square muzzle. The breed is friendly in nature. The dog is available in colors like fawn, brindle, and white.</p>
+            <p>Group – Working<br>Height – 21 to 25 inches<br>Weight – 25 to 32 kg<br>Life Span – 7 to 10 years</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const main = document.getElementById('main');
+            menu.classList.toggle('active');
+            main.classList.toggle('main-active'); // Add/remove active class to main
+        }
+    </script>
+</body>
+</html>

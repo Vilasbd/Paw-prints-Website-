@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: justify;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            margin-left: auto;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e;
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            text-align: left;
+            flex: 1;
+        }
+
+        .social-media {
+            text-align: left;
+            margin-left: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .social-media a {
+            margin: 5px 0;
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+
+        .at ul {
+            margin-left: 20px;
+        }
+
+        .at li {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .show {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .icons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* Responsive Table Styles */
+        .table-responsive {
+            overflow-x: auto; /* Allow horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #36454F;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+
+            table {
+                display: block; /* Make table block to allow scrolling */
+                overflow-x: auto; /* Add horizontal scroll */
+                white-space: nowrap; /* Prevent text from wrapping */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Dog Vaccination Guidelines and Standards</h2>
+            <h3>Which Shots Do Puppies Need?</h3>
+            <p>Going to the vet over several months for a series of puppy vaccinations—and then for boosters or titers throughout your dog’s life—may seem inconvenient, but the diseases that vaccinations will shield our puppies and dogs from are dangerous, potentially deadly, and, thankfully, mostly preventable.</p></br>
+
+            <div class="at">
+                <ul>
+                    <li><b>Bordetella Bronchiseptica</b></li>
+                    <dd>This highly infectious bacterium causes severe fits of coughing, whooping, vomiting, and, in rare cases, seizures and death. It is the primary cause of kennel cough. There are injectable and nasal spray vaccines available.</dd></br>
+
+                    <li><b>Canine Distemper</b></li>
+                    <dd>A severe and contagious disease caused by a virus that attacks the respiratory, gastrointestinal (GI), and nervous systems of dogs, raccoons, skunks, and other animals.</dd></br>
+
+                    <li><b>Canine Hepatitis</b></li>
+                    <dd>Infectious canine hepatitis is a highly contagious viral infection that affects the liver, kidneys, spleen, lungs, and eyes of the affected dog.</dd></br>
+
+                    <li><b>Canine Parainfluenza</b></li>
+                    <dd>This is one of several viruses that can contribute to kennel cough.</dd></br>
+
+                    <li><b>Coronavirus</b></li>
+                    <dd>The canine coronavirus is not the same virus that causes COVID-19 in people. It usually affects dogs’ gastrointestinal systems.</dd></br>
+
+                    <li><b>Heartworm</b></li>
+                    <dd>When your puppy is around 12-to-16 weeks, talk to your vet about starting a heartworm preventive medication.</dd></br>
+
+                    <li><b>Kennel Cough</b></li>
+                    <dd>Kennel cough results from inflammation of the upper airways.</dd></br>
+
+                    <li><b>Leptospirosis</b></li>
+                    <dd>Leptospirosis can be found worldwide in soil and water.</dd></br>
+
+                    <li><b>Lyme Disease</b></li>
+                    <dd>Lyme disease is an infectious, tick-borne disease.</dd></br>
+
+                    <li><b>Parvovirus</b></li>
+                    <dd>Parvo is a highly contagious virus that affects all dogs, especially unvaccinated dogs and puppies less than four months of age.</dd></br>
+
+                    <li><b>Rabies</b></li>
+                    <dd>Rabies is a viral disease of mammals that invades the central nervous system, causing headache, anxiety, hallucinations, and paralysis.</dd></br>
+                </ul>
+            </div>
+
+            <h3>Puppy Vaccination Schedule</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Puppy’s Age</th>
+                        <th>Recommended Vaccinations</th>
+                        <th>Optional Vaccinations</th>
+                    </tr>
+                    <tr>
+                        <td>6 — 8 weeks</td>
+                        <td>Distemper</td>
+                        <td>Parvovirus, Bordetella</td>
+                    </tr>
+                    <tr>
+                        <td>10 — 12 weeks</td>
+                        <td>DHPP</td>
+                        <td>Influenza, Leptospirosis, Bordetella, Lyme disease as recommended by veterinarian</td>
+                    </tr>
+                    <tr>
+                        <td>14 — 16 weeks</td>
+                        <td>DHPP, rabies</td>
+                        <td>Bordetella, Leptospirosis</td>
+                    </tr>
+                    <tr>
+                        <td>12 months</td>
+                        <td>DHPP, rabies</td>
+                        <td>Bordetella, Leptospirosis, Influenza</td>
+                    </tr>
+                    <tr>
+                        <td>Annual</td>
+                        <td>DHPP</td>
+                        <td>Rabies, Bordetella, Leptospirosis, Influenza</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Common Side Effects</h3>
+            <p>After vaccination, some puppies may experience minor side effects, including:</p>
+            <ul>
+                <li>Fatigue</li>
+                <li>Loss of appetite</li>
+                <li>Low-grade fever</li>
+                <li>Mild swelling at the injection site</li>
+            </ul>
+            <p>Contact your veterinarian if you notice any severe reactions, such as:</p>
+            <ul>
+                <li>Persistent vomiting or diarrhea</li>
+                <li>Severe lethargy</li>
+                <li>Difficulty breathing</li>
+                <li>Swelling of the face or limbs</li>
+            </ul>
+        </section></br>
+
+        <section>
+            <h2>Cat Vaccination Guidelines and Standards</h2>
+            <h3>Which Shots Do Kittens Need?</h3>
+            <p>Kittens require a series of vaccinations to protect them from various diseases. Following this schedule is crucial for their health.</p>
+
+            <div class="at">
+                <ul>
+                    <li><b>Feline Panleukopenia</b></li>
+                    <dd>A highly contagious viral disease that can be fatal. It primarily affects kittens.</dd>
+
+                    <li><b>Feline Herpesvirus</b></li>
+                    <dd>This virus causes respiratory issues and eye problems in cats.</dd>
+
+                    <li><b>Feline Calicivirus</b></li>
+                    <dd>This virus contributes to respiratory infections and oral disease.</dd>
+
+                    <li><b>Rabies</b></li>
+                    <dd>A fatal viral disease that affects the central nervous system of mammals.</dd>
+
+                    <li><b>Feline Leukemia Virus (FeLV)</b></li>
+                    <dd>A serious disease that affects the immune system of cats.</dd></br>
+                </ul>
+            </div>
+
+            <h3>Kittens Vaccination Schedule</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Kitten’s Age</th>
+                        <th>Recommended Vaccinations</th>
+                        <th>Optional Vaccinations</th>
+                    </tr>
+                    <tr>
+                        <td>6 — 8 weeks</td>
+                        <td>FVRCP (Feline Viral Rhinotracheitis, Calicivirus, Panleukopenia)</td>
+                        <td>FeLV</td>
+                    </tr>
+                    <tr>
+                        <td>10 — 12 weeks</td>
+                        <td>FVRCP, rabies</td>
+                        <td>FeLV</td>
+                    </tr>
+                    <tr>
+                        <td>14 — 16 weeks</td>
+                        <td>FVRCP, rabies</td>
+                        <td>FeLV</td>
+                    </tr>
+                    <tr>
+                        <td>Annual</td>
+                        <td>FVRCP, rabies</td>
+                        <td>FeLV as recommended</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Common Side Effects</h3>
+            <p>After vaccination, some kittens may experience minor side effects, including:</p>
+            <ul>
+                <li>Fatigue</li>
+                <li>Loss of appetite</li>
+                <li>Low-grade fever</li>
+                <li>Mild swelling at the injection site</li>
+            </ul>
+            <p>Contact your veterinarian if you notice any severe reactions, such as:</p>
+            <ul>
+                <li>Persistent vomiting or diarrhea</li>
+                <li>Severe lethargy</li>
+                <li>Difficulty breathing</li>
+                <li>Swelling of the face or limbs</li>
+            </ul>
+        </section></br>
+
+        <section>
+            <h2>Bird Vaccination Guidelines and Standards</h2>
+            <h3>Which Vaccinations Do Birds Need?</h3>
+            <p>Birds require specific vaccinations to prevent diseases, particularly if they are kept in groups.</p>
+
+            <div class="at">
+                <ul>
+                    <li><b>Avian Polyomavirus</b></li>
+                    <dd>This virus primarily affects young birds and can be fatal.</dd>
+
+                    <li><b>Newcastle Disease</b></li>
+                    <dd>A serious viral disease affecting birds, leading to respiratory issues and death.</dd>
+
+                    <li><b>Psittacine Beak and Feather Disease (PBFD)</b></li>
+                    <dd>This viral disease affects the feathers and immune system of birds.</dd></br>
+                </ul>
+            </div>
+
+            <h3>Bird Vaccination Schedule</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Bird’s Age</th>
+                        <th>Recommended Vaccinations</th>
+                    </tr>
+                    <tr>
+                        <td>6 weeks</td>
+                        <td>Avian Polyomavirus</td>
+                    </tr>
+                    <tr>
+                        <td>8 weeks</td>
+                        <td>Newcastle Disease</td>
+                    </tr>
+                    <tr>
+                        <td>10 weeks</td>
+                        <td>PBFD</td>
+                    </tr>
+                    <tr>
+                        <td>Annual</td>
+                        <td>Booster for all vaccines</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Common Side Effects</h3>
+            <p>After vaccination, some birds may experience minor side effects, including:</p>
+            <ul>
+                <li>Fatigue</li>
+                <li>Loss of appetite</li>
+                <li>Mild swelling at the injection site</li>
+            </ul>
+            <p>Contact your veterinarian if you notice any severe reactions, such as:</p>
+            <ul>
+                <li>Persistent vomiting or diarrhea</li>
+                <li>Severe lethargy</li>
+                <li>Difficulty breathing</li>
+                <li>Swelling of the face or limbs</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Add this CSS */
+        .main-active {
+            margin-top: 70px; /* Adjust this value based on your header height */
+        }
+    </style>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const main = document.querySelector("main"); // Adjusted to select the main element
+            menu.classList.toggle("active"); // Toggle the active class on the menu
+            
+            // Adjust main margin based on menu visibility only in mobile mode
+            if (window.innerWidth <= 768) {
+                if (menu.classList.contains("active")) {
+                    main.classList.add("main-active"); // Shift down
+                } else {
+                    main.classList.remove("main-active"); // Shift up
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

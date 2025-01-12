@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo {
+            flex-grow: 1;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin-left: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e; 
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9; 
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none; 
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            transition: margin-top 0.3s; /* Smooth transition for margin */
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 10px;
+            flex: 1 1 calc(30% - 20px);
+            max-width: calc(30% - 20px);
+            transition: transform 0.2s;
+            text-decoration: none; 
+            color: inherit; 
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .hamburger {
+                display: flex; 
+                margin-right: 20px; 
+            }
+
+            .logo {
+                flex-grow: 0; 
+                text-align: left; 
+            }
+
+            .menu {
+                display: none; 
+                flex-direction: column; 
+                position: absolute; 
+                top: 60px; 
+                left: 0; 
+                background-color: #36454F; 
+                width: 100%; 
+                z-index: 1000; 
+            }
+
+            .menu.active {
+                display: flex; 
+            }
+
+            .cards-container {
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .card {
+                flex: 1 1 100%; 
+                max-width: 100%; 
+            }
+
+            /* Adjusted margin to reduce gap when menu is active */
+            .main-active {
+                margin-top: 80px; /* Set to a smaller value */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section>
+            <h2>Welcome to Paw Prints!</h2>
+            <p>Your source for all things related to pets. Explore our articles, services, and community.</p>
+        </section>
+
+        <section class="cards-container">
+            <a href="dogs.html" class="card">
+                <img src="dog.jpg" alt="Dog">
+                <div class="card-content">
+                    <h3>Adopt a Dog</h3>
+                    <p>Find your new best friend! Dogs make great companions and bring joy to your life.</p>
+                </div>
+            </a>
+            <a href="cats.html" class="card">
+                <img src="british.jpg" alt="Cat">
+                <div class="card-content">
+                    <h3>Adopt a Cat</h3>
+                    <p>Cats are independent yet affectionate. They can be the perfect addition to your home.</p>
+                </div>
+            </a>
+            <a href="birds.html" class="card">
+                <img src="bird.jpg" alt="Bird">
+                <div class="card-content">
+                    <h3>Adopt a Bird</h3>
+                    <p>Birds are gentle and loving pets. They are great for families and can be litter trained!</p>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to handle menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const main = document.getElementById("main");
+            menu.classList.toggle("active"); // Toggle the active class on the menu
+            main.classList.toggle("main-active"); // Toggle margin on main content
+        }
+    </script>
+</body>
+</html>

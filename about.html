@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position relative for absolute elements */
+            z-index: 1000; /* Keep header above other content */
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex; /* Flexbox for horizontal menu */
+            margin-left: auto; /* Push menu to the right */
+            flex-wrap: nowrap; /* Prevent wrapping */
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e; 
+        }
+        
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9; /* Change color when focused or clicked */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* Space between hamburger and logo */
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Center the cards horizontally */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            margin-top: 20px; /* Default margin */
+            transition: margin-top 0.3s; /* Smooth transition for margin */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px; /* Reduced margin between cards */
+            width: 500px; /* Fixed width for the card */
+            max-width: 100%; /* Responsive max width */
+        }
+
+        .card img {
+            width: 100%; /* Full width image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners */
+            margin-bottom: 15px; /* Space between image and text */
+        }
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        .p {
+            text-align: justify;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column; /* Stack menu items */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Position under header */
+                left: 0; /* Align to the left */
+                background-color: #36454F; /* Background color for dropdown */
+                width: 100%; /* Full width */
+                z-index: 1000; /* Above other content */
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="card">
+            <img src="about2.jpg" alt="About Us Image">
+            <h2>About Us</h2>
+            <p class="p">At Paw Prints, we are dedicated to connecting pets with loving families. Our mission is to promote pet adoption and provide valuable resources to pet owners and animal lovers alike.</p>
+            <p class="p">We believe that every pet deserves a second chance, and our platform gives information about varieties of dogs, cats, and birds, pet care tips, and community support.</p>
+        </section>
+
+        <section class="card">
+            <img src="about1.jpg" alt="Our Mission Image">
+            <h2>Our Mission</h2>
+            <p class="p">Our mission is to create a world where every pet has a home. We work closely with local shelters and rescue organizations to help facilitate adoptions and promote responsible pet ownership.</p>
+            <p class="p">Through education and community engagement, we aim to raise awareness about the benefits of adopting pets and the joy they bring to our lives.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const main = document.getElementById('main');
+            const header = document.querySelector('header');
+
+            menu.classList.toggle('active'); // Toggle the menu visibility
+            
+            // Adjust margin based on the menu's visibility
+            if (menu.classList.contains('active')) {
+                main.style.marginTop = '80px'; // Set margin to zero to eliminate the gap
+            } else {
+                main.style.marginTop = '20px'; // Return to original position
+            }
+        }
+    </script>
+</body>
+</html>

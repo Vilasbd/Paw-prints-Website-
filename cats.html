@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Foreign Cat Breeds - Paw Prints</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #36454F;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position relative for absolute elements */
+            z-index: 1000; /* Keep header above other content */
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex; /* Flexbox for horizontal menu */
+            margin-left: auto; /* Push menu to the right */
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #f8ec0e; 
+        }
+
+        .menu a:focus, .menu a:active {
+            color: #d9d9d9; /* Change color when focused or clicked */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px; /* Space between hamburger and logo */
+        }
+
+        .bar {
+            height: 4px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        main {
+            padding: 20px;
+            transition: margin-top 0.3s; /* Smooth transition for margin */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            opacity: 0; /* Start with cards hidden */
+            transform: translateY(20px); /* Move cards down */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation transition */
+            text-align: justify;
+        }
+
+        img {
+            border-radius: 10px; /* Set border radius for all images */
+            width: 100%; /* Set width to 100% for responsive design */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 300px; /* Set a max-width to prevent images from becoming too large */
+        }
+
+        h3 {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #36454F;
+            color: white;
+            padding: 20px; /* Increased padding for the footer */
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex; /* Flexbox layout for footer */
+            justify-content: space-between; /* Space between left and right sections */
+            max-width: 1200px; /* Optional: set a max width for the footer */
+            margin: 0 auto; /* Center the footer content */
+            flex-wrap: wrap; /* Allow wrapping of content */
+        }
+
+        .contact-info {
+            text-align: left; /* Left-align text for contact info */
+            flex: 1; /* Allow flex-grow */
+        }
+
+        .social-media {
+            text-align: left; /* Keep text aligned to the left for headings */
+            margin-left: 20px; /* Move the Follow Us title a bit left */
+            flex: 1; /* Allow flex-grow */
+            display: flex; /* Use flex for layout */
+            flex-direction: column; /* Stack icons vertically */
+            align-items: flex-end; /* Align items to the end (right) */
+        }
+
+        .social-media a {
+            margin: 5px 0; /* Space between icons */
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 25px; /* Set icon width */
+            height: 25px; /* Set icon height */
+        }
+
+        /* Animation class */
+        .animate {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Reset position */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu by default on mobile */
+                flex-direction: column; /* Stack menu items */
+                position: absolute; /* Position absolute */
+                top: 60px; /* Position under header */
+                left: 0; /* Align left */
+                background-color: #36454F; /* Background color for dropdown */
+                width: 100%; /* Full width */
+                z-index: 1000; /* Above other content */
+            }
+
+            .menu.active {
+                display: flex; /* Show menu when active */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger icon on small screens */
+            }
+
+            header {
+                justify-content: flex-start; /* Align items to start */
+            }
+
+            /* Adjust main margin when menu is active */
+            main.main-active {
+                margin-top: 80px; /* Adjust as necessary */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="logo">
+            <h1>Paw Prints</h1>
+        </div>
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Vaccination.html">Vaccination</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <h1>Top 10 Foreign Cat Breeds</h1>
+
+        <div class="card" id="card1">
+            <h3>1. Himalayan Cats</h3>
+            <img src="himalayan.jpg" alt="Himalayan Cat"></br></br>
+            <p>These are quite famous species in India, also known as Himmie and Colourpoint Persian cat. The origin of this breed is done by crossbreeding Persian and Siamese to get different colors and blue eyes. They are available in brown, cream, red, and mainly white colors with color points scattered on the face, ears, legs, and tail. They have beautiful mesmerizing blue eyes. They are not very active and like to cuddle in their pet parent’s lap rather than play. They can be your perfect partner as they are loyal and loving by nature.</p>
+            <p>Group – Longhair<br/>Height – 9 to 12 inches<br/>Weight – 7 to 12 lbs<br/>Life Span – 9 to 15 years</p>
+        </div>
+
+        <div class="card" id="card2">
+            <h3>2. Persian Cats</h3>
+            <img src="parsian.jpg" alt="Persian Cat"></br></br>
+            <p>Also known as Persian Longhair and Iranian. The origin of Persian cats is from Iran. They are beautiful creatures with large deep eyes. They are lazy and like to relax all the time, and they are attention seekers, often acting finicky for that. They can be prone to biting, as they consider it play.</p>
+            <p>Group – Longhair<br/>Height – 10 to 15 inches<br/>Weight – 7 to 12 lbs<br/>Life Span – 12 to 17 years</p>
+        </div>
+
+        <div class="card" id="card3">
+            <h3>3. Siamese Cat</h3>
+            <img src="Siamese Cat.jpg" alt="Siamese Cat"></br></br>
+            <p>Siamese is a common Asian cat breed, originating from Thailand. They are light in color and have great color points in lilac, seal, blue, and chocolate. They are also very active due to their athletic body – long legs, oval paws, and long tails. They are smart, demanding, and need your attention. They can be a great companion if you have a good amount of time for them.</p>
+            <p>Group – Shorthair<br/>Height – 8 to 10 inches<br/>Weight – 8 to 12 lbs<br/>Life Span – 12 to 20 years</p>
+        </div>
+
+        <div class="card" id="card4">
+            <h3>4. Bombay Cat</h3>
+            <img src="bombay.jpg" alt="Bombay Cat"></br></br>
+            <p>Also known as Mumbai cat. There are two kinds available – the American and the British Bombay cat. This breed is an Asian breed, but their ancestry is to black cats. These gorgeous cats resemble a black panther with golden eyes and shiny short hair. They have a muscular build, and contrary to their looks, they are friendly and calm. They are adaptive and enjoy playing and learning new tricks.</p>
+            <p>Group – Shorthair<br/>Height – 9 to 14 inches<br/>Weight – 8 to 12 lbs<br/>Life Span – 12 to 16 years</p>
+        </div>
+
+        <div class="card" id="card5">
+            <h3>5. Maine Coon</h3>
+            <img src="maine.jpg" alt="Maine Coon Cat"></br></br>
+            <p>Also known as the Coon Cat. They are the largest domestic cat breed that is famous for their long hair and tufted ears. They have large muscular bodies and a long bushy tail. They are playful and intelligent, which makes them very lovable. They are known for their loyalty and love for their families. They can adapt to a variety of lifestyles.</p>
+            <p>Group – Longhair<br/>Height – 9 to 10 inches<br/>Weight – 10 to 25 lbs<br/>Life Span – 12 to 15 years</p>
+        </div>
+
+        <div class="card" id="card6">
+            <h3>6. Ragdoll</h3>
+            <img src="ragdoll.jpg" alt="Ragdoll Cat"></br></br>
+            <p>They are large, affectionate, and friendly cats. They are known for their fluffy long hair and striking blue eyes. Ragdolls are often described as gentle and laid-back. They enjoy being held and cuddled, making them great companions for families.</p>
+            <p>Group – Longhair<br/>Height – 9 to 11 inches<br/>Weight – 10 to 20 lbs<br/>Life Span – 12 to 15 years</p>
+        </div>
+
+        <div class="card" id="card7">
+            <h3>7. Scottish Fold</h3>
+            <img src="Scottish Fold.jpg" alt="Scottish Fold Cat"></br></br>
+            <p>They are known for their unique folded ears, which give them a distinct appearance. Scottish Folds are friendly, adaptable, and love to play. They form strong bonds with their owners and are known for their sweet and calm demeanor.</p>
+            <p>Group – Shorthair<br/>Height – 8 to 10 inches<br/>Weight – 6 to 13 lbs<br/>Life Span – 11 to 15 years</p>
+        </div>
+
+        <div class="card" id="card8">
+            <h3>8. Sphynx</h3>
+            <img src="sphynx.jpg" alt="Sphynx Cat"></br></br>
+            <p>Known for their hairlessness, Sphynx cats are playful and affectionate. They have a unique appearance, with large ears and wrinkled skin. Sphynx cats are known for their energetic nature and enjoy being the center of attention.</p>
+            <p>Group – Shorthair<br/>Height – 8 to 10 inches<br/>Weight – 6 to 13 lbs<br/>Life Span – 8 to 14 years</p>
+        </div>
+
+        <div class="card" id="card9">
+            <h3>9. British Shorthair</h3>
+            <img src="british.jpg" alt="British Shorthair Cat"></br></br>
+            <p>Known for their dense and plush coat, British Shorthairs are calm and easygoing cats. They have a round face and stocky build. This breed is known for being loyal and good with children, making them ideal family pets.</p>
+            <p>Group – Shorthair<br/>Height – 12 to 14 inches<br/>Weight – 9 to 18 lbs<br/>Life Span – 12 to 20 years</p>
+        </div>
+
+        <div class="card" id="card10">
+            <h3>10. Burmese</h3>
+            <img src="singapur.jpg" alt="Burmese Cat"></br></br>
+            <p>Burmese cats are known for their playful and affectionate nature. They have a sleek, short coat and striking gold or yellow eyes. They thrive on human interaction and are known to be quite vocal and social.</p>
+            <p>Group – Shorthair<br/>Height – 10 to 12 inches<br/>Weight – 8 to 12 lbs<br/>Life Span – 10 to 17 years</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><strong>Contact Number:</strong> +91 8792084562</p>
+                <p><strong>College:</strong> Vivekananda college of engineering and technology puttur.</p>
+                <p><strong>Address:</strong> Neharu nagara, Puttur, Karnataka, 574203</p>
+            </div>
+            <div class="social-media">
+                <h4>Follow Us:</h4></br>
+                <a href="https://www.instagram.com/vilas.birwaz/" target="_blank">
+                    <img src="linkedin.png" alt="Linkedin" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank">
+                    <img src="youtube.png" alt="You Tube" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <img src="instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var main = document.getElementById("main"); // Get the main element
+            menu.classList.toggle("active"); // Toggle the active class on the menu
+            main.classList.toggle("main-active"); // Toggle margin adjustment on main
+        }
+
+        // Optional: Animate cards on page load
+        window.onload = function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate'); // Add animation class
+                }, index * 200); // Staggered animation
+            });
+        };
+    </script>
+</body>
+</html>
